@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio HTML e CSS</title>
+    <link rel="stylesheet" type="text/css" href="formulario.css" media="screen">
+</head>
+<body>
+    <div class="titulo"><h1>Formulário de Cadastro</h1></div>
+    <div class="formulario">
+        <form enctype="multipart/form-data" >
+            <fieldset>
+                <legend>Crie sua Conta </legend>
+                <p><label for="nome">Nome Completo: </label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo."></p><hr>
+                <p><label for="telefone">Telefone: </label>
+                <input type="tel" id="telefone" class="input-padrao" placeholder="(xx) xxxxx-xxxx"></p>
+                <hr>
+                <p><label for="email">E-mail: </label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail."></p>
+                <hr>
+                <p>Endereço:</p>
+                <label for="cep">CEP: </label>
+                <input type="cep" id="cep" name="cep" placeholder="Digite o CEP onde mora.">
+                <br>
+                <label for="rua">Rua: </label>
+                <input type="rua" id="rua" name="rua" placeholder="Digite o nome da rua onde mora.">
+                <br>
+                <label for="numero">Número: </label>
+                <input type="numero" id="numero" name="numero" placeholder="Digite o numero da casa.">
+                <br>
+                <label for="complemento">Complemento: </label>
+                <input type="complemento" id="complemento" name="complemento" placeholder="Digite o complemento.">
+                <br>
+                <label for="cidade">Cidade: </label>
+                <input type="cidade" id="cidade" name="cidade" placeholder="Digite a cidade onde mora.">
+                <br>
+                <label for="uf">Estado:</label>
+                <select id="uf">
+                    <option value=" "></option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select><hr>
+                <p>Gostaria de confirmar seu cadastro? <br></p>
+                <p><input type="checkbox" name="confimar" id="confirmar" value="Confirmar" checked required>
+                <label for="confirmar">Concordo com os termos de uso e condições de privacidade.</label>
+            </fieldset>  
+        </form>
+    </div>
+    <p><button type="submit" class="button" name="cadastrar"> Cadastrar </button></p>
+</body>
+</html>
