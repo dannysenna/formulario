@@ -29,15 +29,13 @@ legend{
 }
 
 .formulario{
-    color: rgb(5, 5, 74);
-    -webkit-text-stroke-width: 0.5px;
-    -webkit-text-stroke-color:aliceblue;
+    color: aliceblue;
     font-size: x-large;
     font-weight: bold;
-    width: 60%;
+    width: 50%;
     display: inline-block;
     position: relative;
-    background-image: url(images/tecnologia1.jpg);
+    background-image: url(images/inovacao-e-tecnologia.jpg);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
