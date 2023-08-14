@@ -1,4 +1,10 @@
+.error {
+    border: 1px solid #ff0000;
+  }
 
+  .success {
+    border: 1px solid #079315;
+  }
 
 body{
     font-family: 'Times New Roman', Times, serif;
@@ -41,7 +47,7 @@ legend{
     background-repeat: no-repeat;
 }
 
-.button{
+button{
     text-align: center;
     font-size: xx-large;
     font-weight: bold;

@@ -9,35 +9,43 @@
 <body>
     <div class="titulo"><h1>Formulário de Cadastro</h1></div>
     <div class="formulario">
-        <form enctype="multipart/form-data" >
+        <form enctype="multipart/form-data" id="myFormulario" name="myFormulario" >
             <fieldset>
                 <legend>Crie sua Conta </legend>
                 <p><label for="nome">Nome Completo: </label>
-                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo."></p><hr>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo." maxlength="150" required></p><hr>
+
                 <p><label for="telefone">Telefone: </label>
-                <input type="tel" id="telefone" class="input-padrao" placeholder="(xx) xxxxx-xxxx"></p>
+                <input type="tel" id="telefone" class="input-padrao" placeholder="(xx) xxxxx-xxxx" maxlength="11" required></p>
                 <hr>
+
                 <p><label for="email">E-mail: </label>
-                <input type="email" id="email" name="email" placeholder="Digite seu e-mail."></p>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail." required></p>
                 <hr>
+
                 Endereço:<br>
                 <label for="cep">CEP: </label>
-                <input type="cep" id="cep" name="cep" placeholder="Digite o CEP onde mora.">
+                <input type="cep" id="cep" name="cep" placeholder="Digite o CEP onde mora." maxlength="8" required>
                 <br>
+
                 <label for="rua">Rua: </label>
-                <input type="rua" id="rua" name="rua" placeholder="Digite o nome da rua onde mora.">
+                <input type="rua" id="rua" name="rua" placeholder="Digite o nome da rua onde mora." required>
                 <br>
+
                 <label for="numero">Número: </label>
-                <input type="numero" id="numero" name="numero" placeholder="Digite o numero da casa.">
+                <input type="numero" id="numero" name="numero" placeholder="Digite o numero da casa." required>
                 <br>
+
                 <label for="complemento">Complemento: </label>
-                <input type="complemento" id="complemento" name="complemento" placeholder="Digite o complemento.">
+                <input type="complemento" id="complemento" name="complemento" placeholder="Digite o complemento." required>
                 <br>
+
                 <label for="cidade">Cidade: </label>
-                <input type="cidade" id="cidade" name="cidade" placeholder="Digite a cidade onde mora.">
+                <input type="cidade" id="cidade" name="cidade" placeholder="Digite a cidade onde mora." required>
                 <br>
+
                 <label for="uf">Estado:</label>
-                <select id="uf">
+                <select id="uf" required>
                     <option value=" "></option>
                     <option value="AC">Acre</option>
                     <option value="AL">Alagoas</option>
@@ -73,6 +81,9 @@
             </fieldset>  
         </form>
     </div>
-    <p><button type="submit" class="button" name="cadastrar"> Cadastrar </button></p>
+    <p><button type="submit" id="cadastrar" name="cadastrar" disabled> Cadastrar </button></p>
+
+    <script src="formulario.js"></script>
 </body>
 </html>
+
