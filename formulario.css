@@ -1,14 +1,31 @@
 .error {
-    border: 1px solid #ff0000;
-  }
+    border: 5px solid #ff0000;
+    color: red;
+    display: none;
+}
 
-  .success {
-    border: 1px solid #079315;
-  }
+.success {
+    border: 5px solid #079315;
+    color: #079315;
+}
+
+.campo-obrigatorio{
+    border: 5px solid #ff0000;
+    color: red;
+    display: none;
+
+}
+
+.error-api{
+    border: 5px solid #ff0000;
+    color: red;
+    display: none;
+}
+
 
 body{
     font-family: 'Times New Roman', Times, serif;
-    background-image: url("images/tecnologia1.jpg");
+    background-image: url("images/tecnologia.avif");
     text-align: center;
     background-size: cover;
     background-position: top;
@@ -17,45 +34,74 @@ body{
     width:100%;
 }
 
-.titulo{
-    color: aliceblue;
-    text-align: left;
+.titulo {
+    text-align: center;
     font-size: xx-large;
-    font-weight: bold;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color:rgb(5, 5, 74);
+    margin: 20px 0;
 }
 
 legend{
-    color: aliceblue;
-    font-size: x-large;
+    font-size: xx-large;
     font-weight:bold;
     text-align: left;
-    
 }
 
-.formulario{
-    color: aliceblue;
-    font-size: x-large;
+.formulario {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.input-container {
+    margin-bottom: 5px;
+    display:flex ;
     font-weight: bold;
-    width: 50%;
-    display: inline-block;
-    position: relative;
-    background-image: url(images/inovacao-e-tecnologia.jpg);
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
+    justify-content: space-between ;
 }
 
-button{
+.input-label-register {
+    display: flex;
+    font-weight: bold;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.input-register {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.container-button {
     text-align: center;
-    font-size: xx-large;
-    font-weight: bold;
+    margin-top: 20px;
     color: aliceblue;
-    width: 200px;
-    height: 100px;
-    background-color: rgb(5,5,74);
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color:rgb(5, 5, 74);
-
 }
+
+.btn-send {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-send:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.container-endereco {
+    margin-top: 10px;
+}
+
+.card{
+    display: block;
+}
+
+

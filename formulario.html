@@ -1,89 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafio HTML e CSS</title>
     <link rel="stylesheet" type="text/css" href="formulario.css" media="screen">
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
+
+    <title>Desafio HTML e CSS</title>
 </head>
 <body>
     <div class="titulo"><h1>Formulário de Cadastro</h1></div>
+
+    <section class="card">
+        <p><span id="storagevazio">Nenhum usuário cadastrado até o momento!</span>
+        <div id="cardUsuario"></div></p>    
+    </section>
+
     <div class="formulario">
-        <form enctype="multipart/form-data" id="myFormulario" name="myFormulario" >
+        <form enctype="multipart/form-data" action="#"  id="myFormulario" name="myFormulario" >
             <fieldset>
                 <legend>Crie sua Conta </legend>
-                <p><label for="nome">Nome Completo: </label>
-                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo." maxlength="150" required></p><hr>
+                <div class="input-container sucess">
+                    <label class="input-label-register" for="nome">Nome: </label>
+                    <input class="input-register" type="text" id="nome" name="nome" placeholder="Digite seu nome completo.">
+                    <span class="campo-obrigatorio error">O nome deve conter pelo menos 5 caracteres.</span>
+                </div><br><hr>
+    
+                <div class="input-container sucess">
+                    <label class="input-label-register" for="email">E-mail: </label>
+                    <input class="input-register" type="email" id="email" name="email" placeholder="Exemplo: usuario@email.com">
+                    <span class="campo-obrigatorio error">O e-mail deve conter por exemplo: usuario@gmail.com</span>
+                </div><br><hr>
+    
+                <div class="input-container sucess">
+                    <label class="input-label-register" for="telefone">Telefone: </label>
+                    <input class="input-register" type="tel" id="telefone" placeholder="(xx)xxxxx-xxxx" maxlength="12">
+                    <span class="campo-obrigatorio error">O telefone deve conter no mínimo 12 caracteres com o DDD.</span>
 
-                <p><label for="telefone">Telefone: </label>
-                <input type="tel" id="telefone" class="input-padrao" placeholder="(xx) xxxxx-xxxx" maxlength="11" required></p>
-                <hr>
+                </div><br><hr>
 
-                <p><label for="email">E-mail: </label>
-                <input type="email" id="email" name="email" placeholder="Digite seu e-mail." required></p>
-                <hr>
+                <div class="container-endereco"> 
+                    <p><h2>Endereço:</h2></p>
+                    <div class="input-container sucess">
+                        <label for="cep" class="input-label-register">CEP: </label>
+                        <input class="input-register" type="text" id="cep" name="cep" oninput="formatarCEP()" placeholder="Digite o CEP onde mora." maxlength="8" >
+                        <span class="campo-obrigatorio error" >Digite um CEP válido!</span>
+                        <span class="error-api error">CEP não encontrado!</span>
 
-                Endereço:<br>
-                <label for="cep">CEP: </label>
-                <input type="cep" id="cep" name="cep" placeholder="Digite o CEP onde mora." maxlength="8" required>
-                <br>
+                    </div><br>
 
-                <label for="rua">Rua: </label>
-                <input type="rua" id="rua" name="rua" placeholder="Digite o nome da rua onde mora." required>
-                <br>
+                    <div class="input-container sucess">
+                        <label class="input-label-register" for="rua">Rua: </label>
+                        <input class="input-register" type="text" id="rua" name="rua" placeholder="Digite o nome da rua onde mora.">
+                        <span class="campo-obrigatorio error">Digite o nome da rua onde mora.</span>
+                    </div><br>
 
-                <label for="numero">Número: </label>
-                <input type="numero" id="numero" name="numero" placeholder="Digite o numero da casa." required>
-                <br>
+                    <div class="input-container sucess">
+                        <label class="input-label-register" for="numero">Número: </label>
+                        <input class="input-register" type="text" id="numero" name="numero" placeholder="Digite o numero da casa." maxlength="6">
+                        <span class="campo-obrigatorio error">Digite o número da casa onde você mora.</span>
+                    </div><br>
 
-                <label for="complemento">Complemento: </label>
-                <input type="complemento" id="complemento" name="complemento" placeholder="Digite o complemento." required>
-                <br>
+                    <div class="input-container sucess">            
+                        <label class="input-label-register" for="complemento">Complemento: </label>
+                        <input class="input-register" type="text" id="complemento" name="complemento" placeholder="Exemplo: Apartamento, bloco ou ponto de referência." >
+                        <span class="campo-obrigatorio error">Digite por exemplo: apartamento, bloco, ou ponto de referência.</span>
+                    </div><br>
 
-                <label for="cidade">Cidade: </label>
-                <input type="cidade" id="cidade" name="cidade" placeholder="Digite a cidade onde mora." required>
-                <br>
+                    <div class="input-container sucess">            
+                        <label class="input-label-register" for="bairro">Bairro: </label>
+                        <input class="input-register" type="text" id="bairro" name="bairro" placeholder="Digite o bairro onde mora." >
+                        <span class="campo-obrigatorio error">Digite o bairro onde você mora.</span>
+                    </div><br>
 
-                <label for="uf">Estado:</label>
-                <select id="uf" required>
-                    <option value=" "></option>
-                    <option value="AC">Acre</option>
-                    <option value="AL">Alagoas</option>
-                    <option value="AP">Amapá</option>
-                    <option value="AM">Amazonas</option>
-                    <option value="BA">Bahia</option>
-                    <option value="CE">Ceará</option>
-                    <option value="DF">Distrito Federal</option>
-                    <option value="ES">Espírito Santo</option>
-                    <option value="GO">Goiás</option>
-                    <option value="MA">Maranhão</option>
-                    <option value="MT">Mato Grosso</option>
-                    <option value="MS">Mato Grosso do Sul</option>
-                    <option value="MG">Minas Gerais</option>
-                    <option value="PA">Pará</option>
-                    <option value="PB">Paraíba</option>
-                    <option value="PR">Paraná</option>
-                    <option value="PE">Pernambuco</option>
-                    <option value="PI">Piauí</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="RN">Rio Grande do Norte</option>
-                    <option value="RS">Rio Grande do Sul</option>
-                    <option value="RO">Rondônia</option>
-                    <option value="RR">Roraima</option>
-                    <option value="SC">Santa Catarina</option>
-                    <option value="SP">São Paulo</option>
-                    <option value="SE">Sergipe</option>
-                    <option value="TO">Tocantins</option>
-                </select><hr>
+                    <div class="input-container sucess">
+                        <label class="input-label-register" for="cidade">Cidade: </label>
+                        <input class="input-register" type="text" id="cidade" name="cidade" placeholder="Digite a cidade onde mora.">
+                        <span class="campo-obrigatorio error">Digite a cidade onde você mora.</span>
+                    </div><br>
+
+                    <div class="input-container sucess">            
+                        <label class="input-label-register" for="uf">Estado:</label>
+                        <input class="input-register" type="text" id="estado" name="estado" placeholder="Digite o Estado onde mora.">
+                        <span class="campo-obrigatorio error">Digite o estado onde você mora.</span>
+                    </div><br><hr>
+                
+                </div>
+
                 <p>Gostaria de confirmar seu cadastro? <br></p>
-                <p><input type="checkbox" name="confimar" id="confirmar" value="Confirmar" checked required>
+                <p><input type="checkbox" name="confimar" id="confirmar" value="confirmar" required>
                 <label for="confirmar">Concordo com os termos de uso e condições de privacidade.</label>
+
             </fieldset>  
         </form>
     </div>
-    <p><button type="submit" id="cadastrar" name="cadastrar" disabled> Cadastrar </button></p>
+
+    <div class="container-button">
+        <p><button class="btn-send" value="submit" id="cadastrar" name="cadastrar" disabled>Cadastrar</button></p>
+        <p><button  class="btn-send" value="submit" id="limpar" name="limpar">Limpar Formulário</button></p>
+    </div>
+    
 
     <script src="formulario.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 </body>
 </html>
 
